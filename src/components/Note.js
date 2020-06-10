@@ -15,13 +15,14 @@ class Note extends React.Component {
     }
 
     render() {
+        this.state.inScale != this.props.inScale & this.setState({inScale: this.props.inScale})
         return (
             <div className="Note">
                 <div className={this.state.inScale ? "in" : "out"}>
                     <h3>{this.props.symbol}</h3>
                     <h3>{this.props.value}</h3>
-                    <h3>{this.props.blah}</h3>
-                    <button type="button" onClick={this.handleClick}></button>
+                    <h3>{this.props.abs}</h3>
+                    {/* <button type="button" onClick={this.selectA}></button> */}
                 </div>
             </div>
         )

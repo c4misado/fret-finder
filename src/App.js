@@ -9,15 +9,30 @@ class App extends React.Component {
     this.state = {
     }
   }
+
+  selectA = (blah, inScale) => {
+    if(blah == 0) {
+        return !inScale;
+        // this.setState({inScale: !this.state.inScale});
+    }
+  }
+
+  getData = (inScale, symbol, value, abs) => {
+    let myArr = [];
+    myArr.push({"inScale": inScale, "symbol": symbol, "value": value, "abs": abs})
+    this.setState({content: myArr})
+  }
+
   render(){
   return ( 
     <div className="App">
-      <String openNote={115}/>
-      <String openNote={120}/>
-      <String openNote={125}/>
-      <String openNote={130}/>
-      <String openNote={134}/>
-      <String openNote={139}/>
+      <button type="button" onClick={this.selectA}></button>
+      <String openNote={115} getData={this.getData} inScale={/>
+      <String openNote={120} getData={this.getData}/>
+      <String openNote={125} getData={this.getData}/>
+      <String openNote={130} getData={this.getData}/>
+      <String openNote={134} getData={this.getData}/>
+      <String openNote={139} getData={this.getData}/>
     </div>
     )
   }
